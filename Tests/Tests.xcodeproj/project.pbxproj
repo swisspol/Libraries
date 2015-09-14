@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E29962C61BA7404F00426E41 /* libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C21BA7404F00426E41 /* libraries.cc */; settings = {ASSET_TAGS = (); }; };
+		E29962C71BA7404F00426E41 /* libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C21BA7404F00426E41 /* libraries.cc */; settings = {ASSET_TAGS = (); }; };
+		E29962C81BA7404F00426E41 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.c */; settings = {ASSET_TAGS = (); }; };
+		E29962C91BA7404F00426E41 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.c */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E247DF441819DF8D002CD010 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29962A01BA73F2600426E41 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29962C11BA7404F00426E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E29962C21BA7404F00426E41 /* libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libraries.cc; sourceTree = "<group>"; };
+		E29962C31BA7404F00426E41 /* libraries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libraries.h; sourceTree = "<group>"; };
+		E29962C41BA7404F00426E41 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E247DF411819DF8D002CD010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E299629D1BA73F2600426E41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E247DF3B1819DF8D002CD010 = {
+			isa = PBXGroup;
+			children = (
+				E247DF531819E4E3002CD010 /* Source */,
+				E247DF451819DF8D002CD010 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E247DF451819DF8D002CD010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E247DF441819DF8D002CD010 /* Tests */,
+				E29962A01BA73F2600426E41 /* Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E247DF531819E4E3002CD010 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E29962C11BA7404F00426E41 /* Info.plist */,
+				E29962C21BA7404F00426E41 /* libraries.cc */,
+				E29962C31BA7404F00426E41 /* libraries.h */,
+				E29962C41BA7404F00426E41 /* main.c */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E247DF431819DF8D002CD010 /* Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E247DF4D1819DF8D002CD010 /* Build configuration list for PBXNativeTarget "Mac" */;
+			buildPhases = (
+				E247DF401819DF8D002CD010 /* Sources */,
+				E247DF411819DF8D002CD010 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mac;
+			productName = TEST;
+			productReference = E247DF441819DF8D002CD010 /* Tests */;
+			productType = "com.apple.product-type.tool";
+		};
+		E299629F1BA73F2600426E41 /* iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E29962B41BA73F2600426E41 /* Build configuration list for PBXNativeTarget "iPhone" */;
+			buildPhases = (
+				E299629C1BA73F2600426E41 /* Sources */,
+				E299629D1BA73F2600426E41 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPhone;
+			productName = iPhone;
+			productReference = E29962A01BA73F2600426E41 /* Tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E247DF3C1819DF8D002CD010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					E299629F1BA73F2600426E41 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Tests" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E247DF3B1819DF8D002CD010;
+			productRefGroup = E247DF451819DF8D002CD010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E247DF431819DF8D002CD010 /* Mac */,
+				E299629F1BA73F2600426E41 /* iPhone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E247DF401819DF8D002CD010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29962C81BA7404F00426E41 /* main.c in Sources */,
+				E29962C61BA7404F00426E41 /* libraries.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E299629C1BA73F2600426E41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29962C91BA7404F00426E41 /* main.c in Sources */,
+				E29962C71BA7404F00426E41 /* libraries.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E247DF4B1819DF8D002CD010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					"../libsqlite3/$(PLATFORM_NAME)/include",
+					"../libwebp/$(PLATFORM_NAME)/include",
+					"../libpng/$(PLATFORM_NAME)/include",
+					"../liblcms2/$(PLATFORM_NAME)/include",
+					"../libexif/$(PLATFORM_NAME)/include",
+					"../libexiv2/$(PLATFORM_NAME)/include",
+					"../libprotobuf/$(PLATFORM_NAME)/include",
+					"../libssh2/$(PLATFORM_NAME)/include",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"../libsqlite3/$(PLATFORM_NAME)/lib/libsqlite3.a",
+					"../libwebp/$(PLATFORM_NAME)/lib/libwebp.a",
+					"../libpng/$(PLATFORM_NAME)/lib/libpng.a",
+					"../liblcms2/$(PLATFORM_NAME)/lib/liblcms2.a",
+					"../libexif/$(PLATFORM_NAME)/lib/libexif.a",
+					"../libexiv2/$(PLATFORM_NAME)/lib/libexiv2.a",
+					"../libprotobuf/$(PLATFORM_NAME)/lib/libprotobuf.a",
+					"../libssh2/$(PLATFORM_NAME)/lib/libssh2.a",
+				);
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		E247DF4C1819DF8D002CD010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEAD_CODE_STRIPPING = YES;
+				HEADER_SEARCH_PATHS = (
+					"../libsqlite3/$(PLATFORM_NAME)/include",
+					"../libwebp/$(PLATFORM_NAME)/include",
+					"../libpng/$(PLATFORM_NAME)/include",
+					"../liblcms2/$(PLATFORM_NAME)/include",
+					"../libexif/$(PLATFORM_NAME)/include",
+					"../libexiv2/$(PLATFORM_NAME)/include",
+					"../libprotobuf/$(PLATFORM_NAME)/include",
+					"../libssh2/$(PLATFORM_NAME)/include",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"../libsqlite3/$(PLATFORM_NAME)/lib/libsqlite3.a",
+					"../libwebp/$(PLATFORM_NAME)/lib/libwebp.a",
+					"../libpng/$(PLATFORM_NAME)/lib/libpng.a",
+					"../liblcms2/$(PLATFORM_NAME)/lib/liblcms2.a",
+					"../libexif/$(PLATFORM_NAME)/lib/libexif.a",
+					"../libexiv2/$(PLATFORM_NAME)/lib/libexiv2.a",
+					"../libprotobuf/$(PLATFORM_NAME)/lib/libprotobuf.a",
+					"../libssh2/$(PLATFORM_NAME)/lib/libssh2.a",
+				);
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		E247DF4E1819DF8D002CD010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = Tests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E247DF4F1819DF8D002CD010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = Tests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E29962B51BA73F2600426E41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E29962B61BA73F2600426E41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = Tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E247DF4B1819DF8D002CD010 /* Debug */,
+				E247DF4C1819DF8D002CD010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E247DF4D1819DF8D002CD010 /* Build configuration list for PBXNativeTarget "Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E247DF4E1819DF8D002CD010 /* Debug */,
+				E247DF4F1819DF8D002CD010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E29962B41BA73F2600426E41 /* Build configuration list for PBXNativeTarget "iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E29962B51BA73F2600426E41 /* Debug */,
+				E29962B61BA73F2600426E41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E247DF3C1819DF8D002CD010 /* Project object */;
+}
