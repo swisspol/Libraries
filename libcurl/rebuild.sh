@@ -36,9 +36,11 @@ tar -xvf "curl-$VERSION.tar.gz"
 # Build library
 pushd "curl-$VERSION"
 
-EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --disable-verbose \
+EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --enable-verbose \
+  --enable-threaded-resolver --disable-ares \
   --without-ssl --without-libssh2 --with-darwinssl \
   --enable-ipv6 \
+  --enable-crypto-auth \
   --enable-http \
   --enable-proxy \
   --disable-ftp \
@@ -55,6 +57,7 @@ EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --disable-verbose \
   --disable-smtp \
   --disable-gopher \
   --disable-manual \
+  --disable-sspi \
   "
 build_library_macosx
 rm "../MacOSX/include/curl/curlbuild-x86_64.h"
