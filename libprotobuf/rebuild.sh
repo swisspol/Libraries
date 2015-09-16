@@ -6,8 +6,10 @@ VERSION="2.6.1"
 source "../rebuild-functions.sh"
 
 # Download source
-rm -f "protobuf-$VERSION.tar.gz"
-curl -L -O "https://github.com/google/protobuf/releases/download/v$VERSION/protobuf-$VERSION.tar.gz"
+if [ ! -f "protobuf-$VERSION.tar.gz" ]
+then
+  curl -L -O "https://github.com/google/protobuf/releases/download/v$VERSION/protobuf-$VERSION.tar.gz"
+fi
 
 # Extract source
 rm -rf "protobuf-$VERSION"
@@ -30,4 +32,3 @@ popd
 
 # Clean up
 rm -rf "protobuf-$VERSION"
-rm -f "protobuf-$VERSION.tar.gz"
