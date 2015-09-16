@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				E29962C11BA7404F00426E41 /* Info.plist */,
-				E29962C21BA7404F00426E41 /* libraries.cc */,
 				E29962C31BA7404F00426E41 /* libraries.h */,
+				E29962C21BA7404F00426E41 /* libraries.cc */,
 				E29962C41BA7404F00426E41 /* main.c */,
 			);
 			name = Source;
@@ -299,6 +299,7 @@
 				E29962B61BA73F2600426E41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
