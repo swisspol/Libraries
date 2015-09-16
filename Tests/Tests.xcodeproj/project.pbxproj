@@ -173,6 +173,7 @@
 					"../libexiv2/$(PLATFORM_NAME)/include",
 					"../libprotobuf/$(PLATFORM_NAME)/include",
 					"../libssh2/$(PLATFORM_NAME)/include",
+					"../libcurl/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -184,6 +185,7 @@
 					"../libexiv2/$(PLATFORM_NAME)/lib/libexiv2.a",
 					"../libprotobuf/$(PLATFORM_NAME)/lib/libprotobuf.a",
 					"../libssh2/$(PLATFORM_NAME)/lib/libssh2.a",
+					"../libcurl/$(PLATFORM_NAME)/lib/libcurl.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -203,6 +205,7 @@
 					"../libexiv2/$(PLATFORM_NAME)/include",
 					"../libprotobuf/$(PLATFORM_NAME)/include",
 					"../libssh2/$(PLATFORM_NAME)/include",
+					"../libcurl/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -214,6 +217,7 @@
 					"../libexiv2/$(PLATFORM_NAME)/lib/libexiv2.a",
 					"../libprotobuf/$(PLATFORM_NAME)/lib/libprotobuf.a",
 					"../libssh2/$(PLATFORM_NAME)/lib/libssh2.a",
+					"../libcurl/$(PLATFORM_NAME)/lib/libcurl.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};

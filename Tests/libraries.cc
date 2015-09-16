@@ -11,6 +11,7 @@
 #include <libexif/exif-data.h>
 #include <exiv2/exiv2.hpp>
 #include <libssh2.h>
+#include <curl/curl.h>
 
 #include "libraries.h"
 
@@ -48,4 +49,7 @@ void test_libraries() {
   
   // Test libssh2
   libssh2_version(0);
+  
+  // Test libcurl
+  curl_version();
 }
