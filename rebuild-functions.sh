@@ -75,7 +75,7 @@ function build_library_arch () {
   if [ "$ARCH" == "x86_64" ]
   then
     HOST="i386"
-  elif [ "$ARCH" == "arm64" ]
+  elif [ "$ARCH" == "arm64" ] || [ "$ARCH" == "armv7" ]
   then
     HOST="arm"
   else
