@@ -39,29 +39,38 @@ function build_library_arch () {
   # Find tools
   export CC=`xcrun -find clang`
   export CPP="$CC -E"
+  export CXX=`xcrun -find clang++`
+  export CXXCPP="$CC -E"
   export LD=`xcrun -find ld`
   export AR=`xcrun -find ar`
   export RANLIB=`xcrun -find ranlib`
-  export LIPO=$(xcrun -find lipo)
-
-  # Set up build environment
-  export CFLAGS="-arch $ARCH -isysroot $SDKROOT -I$SDKROOT/usr/include"
-  export LDFLAGS="-arch $ARCH -isysroot $SDKROOT -L$SDKROOT/usr/lib"
+  export LIPO=`xcrun -find lipo`
+  export STRIP=`xcrun -find strip`
+  
+  # Override tools to compile for SDK
+  CC_FLAGS="-isysroot $SDKROOT -arch $ARCH"
+  LD_FLAGS="-isysroot $SDKROOT -arch $ARCH"
   if [ "$PLATFORM" == "MacOSX" ]
   then
-    export CFLAGS="$CFLAGS -mmacosx-version-min=$OSX_MIN_VERSION"
-    export LDFLAGS="$LDFLAGS -mmacosx-version-min=$OSX_MIN_VERSION"
+    CC_FLAGS="$CC_FLAGS -mmacosx-version-min=$OSX_MIN_VERSION"
   elif [ "$PLATFORM" == "iPhoneSimulator" ]
   then
-    export CFLAGS="$CFLAGS -mios-simulator-version-min=$IOS_MIN_VERSION"
-    export LDFLAGS="$LDFLAGS -mios-simulator-version-min=$IOS_MIN_VERSION"
+    CC_FLAGS="$CC_FLAGS -mios-simulator-version-min=$IOS_MIN_VERSION"
   elif [ "$PLATFORM" == "iPhoneOS" ]
   then
-    export CFLAGS="$CFLAGS -miphoneos-version-min=$IOS_MIN_VERSION  -fembed-bitcode"
-    export LDFLAGS="$LDFLAGS -miphoneos-version-min=$IOS_MIN_VERSION"
+    CC_FLAGS="$CC_FLAGS -miphoneos-version-min=$IOS_MIN_VERSION"
+    if (( $(echo "$IOS_SDK_VERSION >= 9.0" | bc -l) ))
+    then
+      export CC_FLAGS="$CC_FLAGS -fembed-bitcode"
+    fi
   fi
-  export CFLAGS="$CFLAGS $EXTRA_CFLAGS"
-  export CPPFLAGS="$CFLAGS"
+  export CC="$CC $CC_FLAGS $EXTRA_CFLAGS"
+  export CPP="$CPP $CC_FLAGS $EXTRA_CFLAGS"
+  export CXX="$CXX $CC_FLAGS $EXTRA_CFLAGS"
+  export CXXCPP="$CXXCPP $CC_FLAGS $EXTRA_CFLAGS"
+  export LD="$LD $LD_FLAGS"
+  
+  # Set up host
   if [ "$ARCH" == "x86_64" ]
   then
     HOST="i386"
@@ -72,10 +81,16 @@ function build_library_arch () {
     HOST="$ARCH"
   fi
   
+  # Work around libtool bug (see http://stackoverflow.com/questions/32622284/)
+  if [ "$PLATFORM" != "MacOSX" ]
+  then
+    export MACOSX_DEPLOYMENT_TARGET="10.4"
+  fi
+  
   # Configure and build
   rm -f "$LOG"
   touch "$LOG"
-  rm -rf "$PREFIX"
+  rm -rf "$PREFIX"  
   ./configure \
     --prefix="$PREFIX" \
     --host=$HOST-apple-darwin \
@@ -85,6 +100,9 @@ function build_library_arch () {
   make -j4 > "$LOG"
   make install > "$LOG"
   make clean > "$LOG"
+  
+  # Archive configure log
+  mv "config.log" "$DESTINATION/configure-$ARCH.log"
   
   # Hook
   post_build_hook "$PLATFORM" "$ARCH" "$PREFIX" "$DESTINATION"
