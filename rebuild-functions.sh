@@ -19,6 +19,23 @@ function post_package_hook() {
   echo "Post package hook"
 }
 
+function configure() {
+  local PLATFORM="$1"
+  local ARCH="$2"
+  local PREFIX="$3"
+  local LOG="$4"
+  
+  if [ "$ARCH" == "x86_64" ] || [ "$ARCH" == "i386" ]
+  then
+    HOST="i386-apple-darwin"
+  elif [ "$ARCH" == "arm64" ] || [ "$ARCH" == "armv7" ]
+  then
+    HOST="arm-apple-darwin"
+  fi
+  
+  ./configure --prefix="$PREFIX" --host="$HOST" --enable-static --disable-shared $EXTRA_CONFIGURE_OPTIONS > "$LOG"
+}
+
 function build_library_arch () {
   local DESTINATION="$1"
   local PLATFORM="$2"
@@ -71,17 +88,6 @@ function build_library_arch () {
   export CXXCPP="$CXXCPP $CC_FLAGS $EXTRA_CFLAGS"
   export LD="$LD $LD_FLAGS"
   
-  # Set up host
-  if [ "$ARCH" == "x86_64" ]
-  then
-    HOST="i386"
-  elif [ "$ARCH" == "arm64" ] || [ "$ARCH" == "armv7" ]
-  then
-    HOST="arm"
-  else
-    HOST="$ARCH"
-  fi
-  
   # Work around libtool bug (see http://stackoverflow.com/questions/32622284/)
   if [ "$PLATFORM" != "MacOSX" ]
   then
@@ -91,13 +97,8 @@ function build_library_arch () {
   # Configure and build
   rm -f "$LOG"
   touch "$LOG"
-  rm -rf "$PREFIX"  
-  ./configure \
-    --prefix="$PREFIX" \
-    --host=$HOST-apple-darwin \
-    --enable-static \
-    --disable-shared \
-    $EXTRA_CONFIGURE_OPTIONS > "$LOG"
+  rm -rf "$PREFIX"
+  configure "$PLATFORM" "$ARCH" "$PREFIX" "$LOG"
   make -j4 > "$LOG"
   make install > "$LOG"
   make clean > "$LOG"
