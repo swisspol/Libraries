@@ -20,6 +20,9 @@ using namespace google::protobuf::io;
 void test_libraries() {
   // Test libsqlite3
   sqlite3_libversion();
+  if (!sqlite3_compileoption_used("THREADSAFE=2") || !sqlite3_compileoption_used("ENABLE_FTS3") || !sqlite3_compileoption_used("ENABLE_FTS3_PARENTHESIS")) {
+    abort();
+  }
   
   // Test libwebp
   WebPConfig config;
