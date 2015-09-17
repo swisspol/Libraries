@@ -13,11 +13,9 @@
 #include <libssh2.h>
 #include <curl/curl.h>
 
-#include "libraries.h"
-
 using namespace google::protobuf::io;
 
-void test_libraries() {
+int main(int argc, const char* argv[]) {
   // Test libsqlite3
   sqlite3_libversion();
   if (!sqlite3_compileoption_used("THREADSAFE=2") || !sqlite3_compileoption_used("ENABLE_FTS3") || !sqlite3_compileoption_used("ENABLE_FTS3_PARENTHESIS")) {
@@ -37,7 +35,7 @@ void test_libraries() {
   if (input_profile) {
     cmsCloseProfile(input_profile);
   }
-
+  
   // Test libprotobuf
   ArrayInputStream* stream = new ArrayInputStream(NULL, 0);
   delete stream;
@@ -55,4 +53,8 @@ void test_libraries() {
   
   // Test libcurl
   curl_version();
+  
+  // We're done!
+  printf("OK\n");
+  return 0;
 }

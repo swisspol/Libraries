@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E29962C61BA7404F00426E41 /* libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C21BA7404F00426E41 /* libraries.cc */; settings = {ASSET_TAGS = (); }; };
-		E29962C71BA7404F00426E41 /* libraries.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C21BA7404F00426E41 /* libraries.cc */; settings = {ASSET_TAGS = (); }; };
-		E29962C81BA7404F00426E41 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.c */; settings = {ASSET_TAGS = (); }; };
-		E29962C91BA7404F00426E41 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.c */; settings = {ASSET_TAGS = (); }; };
+		E29962C81BA7404F00426E41 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.cc */; settings = {ASSET_TAGS = (); }; };
+		E29962C91BA7404F00426E41 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.cc */; settings = {ASSET_TAGS = (); }; };
+		E29963231BAA70F800426E41 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963221BAA70F800426E41 /* CoreFoundation.framework */; };
+		E29963261BAA711000426E41 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963251BAA711000426E41 /* Security.framework */; };
+		E29963291BAA713A00426E41 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963221BAA70F800426E41 /* CoreFoundation.framework */; };
+		E299632A1BAA713C00426E41 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963251BAA711000426E41 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E247DF441819DF8D002CD010 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29962A01BA73F2600426E41 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29962C11BA7404F00426E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E29962C21BA7404F00426E41 /* libraries.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libraries.cc; sourceTree = "<group>"; };
-		E29962C31BA7404F00426E41 /* libraries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libraries.h; sourceTree = "<group>"; };
-		E29962C41BA7404F00426E41 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E29962C41BA7404F00426E41 /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		E29963221BAA70F800426E41 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		E29963251BAA711000426E41 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29963291BAA713A00426E41 /* CoreFoundation.framework in Frameworks */,
+				E299632A1BAA713C00426E41 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29963261BAA711000426E41 /* Security.framework in Frameworks */,
+				E29963231BAA70F800426E41 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				E247DF531819E4E3002CD010 /* Source */,
+				E29963241BAA70FE00426E41 /* Frameworks and Libraries */,
 				E247DF451819DF8D002CD010 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,11 +68,18 @@
 			isa = PBXGroup;
 			children = (
 				E29962C11BA7404F00426E41 /* Info.plist */,
-				E29962C31BA7404F00426E41 /* libraries.h */,
-				E29962C21BA7404F00426E41 /* libraries.cc */,
-				E29962C41BA7404F00426E41 /* main.c */,
+				E29962C41BA7404F00426E41 /* main.cc */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		E29963241BAA70FE00426E41 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				E29963221BAA70F800426E41 /* CoreFoundation.framework */,
+				E29963251BAA711000426E41 /* Security.framework */,
+			);
+			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29962C81BA7404F00426E41 /* main.c in Sources */,
-				E29962C61BA7404F00426E41 /* libraries.cc in Sources */,
+				E29962C81BA7404F00426E41 /* main.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29962C91BA7404F00426E41 /* main.c in Sources */,
-				E29962C71BA7404F00426E41 /* libraries.cc in Sources */,
+				E29962C91BA7404F00426E41 /* main.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +174,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEAD_CODE_STRIPPING = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					"../libsqlite3/$(PLATFORM_NAME)/include",
@@ -195,7 +206,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEAD_CODE_STRIPPING = YES;
 				HEADER_SEARCH_PATHS = (
 					"../libsqlite3/$(PLATFORM_NAME)/include",
 					"../libwebp/$(PLATFORM_NAME)/include",
