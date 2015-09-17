@@ -12,7 +12,7 @@
 # Modeled after libxml-config.
 
 version="1.6.18"
-prefix="/Users/pol/Downloads/libprotobuf/libpng/libpng-1.6.18/../MacOSX-x86_64"
+prefix="/Users/pol/Source/Libraries/libpng/libpng-1.6.18/../MacOSX-x86_64"
 exec_prefix="${prefix}"
 libdir="${exec_prefix}/lib"
 includedir="${prefix}/include/libpng16"

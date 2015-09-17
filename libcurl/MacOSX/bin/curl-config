@@ -75,7 +75,7 @@ while test $# -gt 0; do
         ;;
 
     --cc)
-        echo "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
+        echo "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -arch x86_64 -mmacosx-version-min=10.8 "
         ;;
 
     --prefix)
@@ -156,7 +156,7 @@ while test $# -gt 0; do
 
     --static-libs)
         if test "Xyes" != "Xno" ; then
-          echo ${exec_prefix}/lib/libcurl.a -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib -mmacosx-version-min=10.8 -framework CoreFoundation -framework Security -lz
+          echo ${exec_prefix}/lib/libcurl.a -framework CoreFoundation -framework Security -lz
         else
           echo "curl was built with static libraries disabled" >&2
           exit 1
@@ -164,7 +164,7 @@ while test $# -gt 0; do
         ;;
 
     --configure)
-        echo " '--prefix=/Users/pol/Source/Libraries/libcurl/curl-7.44.0/../MacOSX-x86_64' '--host=i386-apple-darwin' '--enable-static' '--disable-shared' '--disable-debug' '--disable-curldebug' '--enable-verbose' '--enable-threaded-resolver' '--disable-ares' '--without-ssl' '--without-libssh2' '--with-darwinssl' '--enable-ipv6' '--enable-crypto-auth' '--enable-http' '--enable-proxy' '--disable-ftp' '--disable-file' '--disable-ldap' '--disable-ldaps' '--disable-rtsp' '--disable-dict' '--disable-telnet' '--disable-tftp' '--disable-pop3' '--disable-imap' '--disable-smb' '--disable-smtp' '--disable-gopher' '--disable-manual' '--disable-sspi' 'host_alias=i386-apple-darwin' 'CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang' 'CFLAGS=-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include -mmacosx-version-min=10.8 ' 'LDFLAGS=-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib -mmacosx-version-min=10.8' 'CPPFLAGS=-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include -mmacosx-version-min=10.8 ' 'CPP=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -E'"
+        echo " '--prefix=/Users/pol/Source/Libraries/libcurl/curl-7.44.0/../MacOSX-x86_64' '--host=i386-apple-darwin' '--enable-static' '--disable-shared' '--disable-debug' '--disable-curldebug' '--enable-verbose' '--enable-threaded-resolver' '--disable-ares' '--without-ssl' '--without-libssh2' '--with-darwinssl' '--enable-ipv6' '--enable-crypto-auth' '--enable-http' '--enable-proxy' '--disable-ftp' '--disable-file' '--disable-ldap' '--disable-ldaps' '--disable-rtsp' '--disable-dict' '--disable-telnet' '--disable-tftp' '--disable-pop3' '--disable-imap' '--disable-smb' '--disable-smtp' '--disable-gopher' '--disable-manual' '--disable-sspi' 'host_alias=i386-apple-darwin' 'CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -arch x86_64 -mmacosx-version-min=10.8 ' 'CPP=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -E -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -arch x86_64 -mmacosx-version-min=10.8 '"
         ;;
 
     *)
