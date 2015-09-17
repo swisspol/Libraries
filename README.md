@@ -12,8 +12,8 @@ This repository contains various open source libraries precompiled as static lib
 * [libprotobuf](https://developers.google.com/protocol-buffers/)
 * [libsqlite3](http://www.sqlite.org/) (with FTS enabled and default threading mode set to multi-threaded i.e. SQLITE_THREADSAFE=2)
 * [libssh2](http://www.libssh2.org/)
+* [libssl](https://www.openssl.org/)
 * [libwebp](https://developers.google.com/speed/webp/)
-* [openssl](https://www.openssl.org/) (built using https://github.com/x2on/OpenSSL-for-iPhone)
 
 Build Environment
 =================
