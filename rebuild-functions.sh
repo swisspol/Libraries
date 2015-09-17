@@ -28,14 +28,14 @@ function build_library_arch () {
   local LOG="$PREFIX.log"
 
   # Find SDK
-  export DEVROOT="$DEVELOPER_DIR/Platforms/$PLATFORM.platform/Developer"
+  DEVROOT="$DEVELOPER_DIR/Platforms/$PLATFORM.platform/Developer"
   if [ "$PLATFORM" == "MacOSX" ]
   then
-    export SDKROOT="$DEVROOT/SDKs/$PLATFORM$OSX_SDK_VERSION.sdk"
+    SDKROOT="$DEVROOT/SDKs/$PLATFORM$OSX_SDK_VERSION.sdk"
   else
-    export SDKROOT="$DEVROOT/SDKs/$PLATFORM$IOS_SDK_VERSION.sdk"
+    SDKROOT="$DEVROOT/SDKs/$PLATFORM$IOS_SDK_VERSION.sdk"
   fi
-
+  
   # Find tools
   export CC=`xcrun -find clang`
   export CPP="$CC -E"
@@ -46,6 +46,7 @@ function build_library_arch () {
   export RANLIB=`xcrun -find ranlib`
   export LIPO=`xcrun -find lipo`
   export STRIP=`xcrun -find strip`
+  export CC_FOR_BUILD=`xcrun -find clang`
   
   # Override tools to compile for SDK
   CC_FLAGS="-isysroot $SDKROOT -arch $ARCH"
@@ -61,7 +62,7 @@ function build_library_arch () {
     CC_FLAGS="$CC_FLAGS -miphoneos-version-min=$IOS_MIN_VERSION"
     if (( $(echo "$IOS_SDK_VERSION >= 9.0" | bc -l) ))
     then
-      export CC_FLAGS="$CC_FLAGS -fembed-bitcode"
+      CC_FLAGS="$CC_FLAGS -fembed-bitcode"
     fi
   fi
   export CC="$CC $CC_FLAGS $EXTRA_CFLAGS"
