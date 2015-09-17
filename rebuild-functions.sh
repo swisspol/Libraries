@@ -71,7 +71,7 @@ function build_library_arch () {
   else
     HOST="$ARCH"
   fi
-
+  
   # Configure and build
   rm -f "$LOG"
   touch "$LOG"
@@ -106,6 +106,8 @@ function build_library_arch () {
   pushd "$PREFIX/lib"
   for LIBRARY in *.a
   do
+    $STRIP -S -o "$LIBRARY~" "$LIBRARY"  # Strip debugging symbols
+    mv -f "$LIBRARY~" "$LIBRARY"
     if [ -e "$DESTINATION/lib/$LIBRARY" ]
     then
       $LIPO -create "$DESTINATION/lib/$LIBRARY" "$LIBRARY" -output "$DESTINATION/lib/$LIBRARY"
