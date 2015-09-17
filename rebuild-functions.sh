@@ -102,8 +102,11 @@ function build_library_arch () {
   make install > "$LOG"
   make clean > "$LOG"
   
-  # Archive configure log
-  mv "config.log" "$DESTINATION/configure-$ARCH.log"
+  # Archive configure log if available
+  if [ -e "config.log" ]
+  then
+    mv "config.log" "$DESTINATION/configure-$ARCH.log"
+  fi
   
   # Hook
   post_build_hook "$PLATFORM" "$ARCH" "$PREFIX" "$DESTINATION"
