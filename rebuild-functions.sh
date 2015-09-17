@@ -106,13 +106,21 @@ function build_library_arch () {
   pushd "$PREFIX/lib"
   for LIBRARY in *.a
   do
-    $STRIP -S -o "$LIBRARY~" "$LIBRARY"  # Strip debugging symbols
-    mv -f "$LIBRARY~" "$LIBRARY"
-    if [ -e "$DESTINATION/lib/$LIBRARY" ]
+    if [ -L "$LIBRARY" ]  # Preserve symbolic link as-is
     then
-      $LIPO -create "$DESTINATION/lib/$LIBRARY" "$LIBRARY" -output "$DESTINATION/lib/$LIBRARY"
+      if [ ! -e "$DESTINATION/lib/$LIBRARY" ]
+      then
+        mv "$LIBRARY" "$DESTINATION/lib/$LIBRARY"
+      fi
     else
-      mv "$LIBRARY" "$DESTINATION/lib/$LIBRARY"
+      $STRIP -S -o "$LIBRARY~" "$LIBRARY"  # Strip debugging symbols
+      mv -f "$LIBRARY~" "$LIBRARY"
+      if [ -e "$DESTINATION/lib/$LIBRARY" ]
+      then
+        $LIPO -create "$DESTINATION/lib/$LIBRARY" "$LIBRARY" -output "$DESTINATION/lib/$LIBRARY"
+      else
+        mv "$LIBRARY" "$DESTINATION/lib/$LIBRARY"
+      fi
     fi
   done
   popd
