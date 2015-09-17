@@ -5,7 +5,7 @@ VERSION="7.44.0"
 
 source "../rebuild-functions.sh"
 
-# Override build hooks
+# Override build hooks to patch "curlbuild.h" to be compatible with 32 and 64 bit architectures
 function post_build_hook() {
   local PLATFORM="$1"
   local ARCH="$2"
