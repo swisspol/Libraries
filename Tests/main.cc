@@ -52,7 +52,7 @@ int main(int argc, const char* argv[]) {
   libssh2_version(0);
   
   // Test libcurl
-  curl_version();
+  curl_version_info(CURLVERSION_NOW);
   
   // We're done!
   printf("OK\n");
