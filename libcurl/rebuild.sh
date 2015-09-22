@@ -38,12 +38,13 @@ pushd "curl-$VERSION"
 
 EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --enable-verbose \
   --enable-threaded-resolver --disable-ares \
-  --without-ssl --without-libssh2 --with-darwinssl \
+  --with-ssl=`pwd`/../../libssl/MacOSX \
+  --with-libssh2=`pwd`/../../libssh2/MacOSX \
   --enable-ipv6 \
   --enable-crypto-auth \
+  --enable-ftp \
   --enable-http \
   --enable-proxy \
-  --disable-ftp \
   --disable-file \
   --disable-ldap \
   --disable-ldaps \
@@ -62,9 +63,57 @@ EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --enable-verbose \
 build_library_macosx
 rm "../MacOSX/include/curl/curlbuild-x86_64.h"
 
+EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --enable-verbose \
+  --enable-threaded-resolver --disable-ares \
+  --with-ssl=`pwd`/../../libssl/iPhoneSimulator \
+  --with-libssh2=`pwd`/../../libssh2/iPhoneSimulator \
+  --enable-ipv6 \
+  --enable-crypto-auth \
+  --enable-ftp \
+  --enable-http \
+  --enable-proxy \
+  --disable-file \
+  --disable-ldap \
+  --disable-ldaps \
+  --disable-rtsp \
+  --disable-dict \
+  --disable-telnet \
+  --disable-tftp \
+  --disable-pop3 \
+  --disable-imap \
+  --disable-smb \
+  --disable-smtp \
+  --disable-gopher \
+  --disable-manual \
+  --disable-sspi \
+  "
 build_library_iphonesimulator
 printf "#ifdef __LP64__\n#include \"curlbuild-x86_64.h\"\n#else\n#include \"curlbuild-i386.h\"\n#endif\n" > "../iPhoneSimulator/include/curl/curlbuild.h"
 
+EXTRA_CONFIGURE_OPTIONS="--disable-debug --disable-curldebug --enable-verbose \
+  --enable-threaded-resolver --disable-ares \
+  --with-ssl=`pwd`/../../libssl/iPhoneOS \
+  --with-libssh2=`pwd`/../../libssh2/iPhoneOS \
+  --enable-ipv6 \
+  --enable-crypto-auth \
+  --enable-ftp \
+  --enable-http \
+  --enable-proxy \
+  --disable-file \
+  --disable-ldap \
+  --disable-ldaps \
+  --disable-rtsp \
+  --disable-dict \
+  --disable-telnet \
+  --disable-tftp \
+  --disable-pop3 \
+  --disable-imap \
+  --disable-smb \
+  --disable-smtp \
+  --disable-gopher \
+  --disable-manual \
+  --disable-sspi \
+  "
 build_library_iphoneos
 printf "#ifdef __LP64__\n#include \"curlbuild-arm64.h\"\n#else\n#include \"curlbuild-armv7.h\"\n#endif\n" > "../iPhoneOS/include/curl/curlbuild.h"
 

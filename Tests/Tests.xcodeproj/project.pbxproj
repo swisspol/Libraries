@@ -197,6 +197,8 @@
 					"../libprotobuf/$(PLATFORM_NAME)/lib/libprotobuf.a",
 					"../libssh2/$(PLATFORM_NAME)/lib/libssh2.a",
 					"../libcurl/$(PLATFORM_NAME)/lib/libcurl.a",
+					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
+					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -228,6 +230,8 @@
 					"../libprotobuf/$(PLATFORM_NAME)/lib/libprotobuf.a",
 					"../libssh2/$(PLATFORM_NAME)/lib/libssh2.a",
 					"../libcurl/$(PLATFORM_NAME)/lib/libcurl.a",
+					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
+					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
