@@ -185,6 +185,7 @@
 					"../libprotobuf/$(PLATFORM_NAME)/include",
 					"../libssh2/$(PLATFORM_NAME)/include",
 					"../libcurl/$(PLATFORM_NAME)/include",
+					"../libssl/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -218,6 +219,7 @@
 					"../libprotobuf/$(PLATFORM_NAME)/include",
 					"../libssh2/$(PLATFORM_NAME)/include",
 					"../libcurl/$(PLATFORM_NAME)/include",
+					"../libssl/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
