@@ -20,6 +20,7 @@
 #include <openssl/err.h>
 #include <openssl/conf.h>
 #include <openssl/evp.h>
+#include <ffi.h>
 
 using namespace google::protobuf::io;
 
@@ -89,8 +90,47 @@ int main(int argc, const char* argv[]) {
   SSL_load_error_strings();
   OpenSSL_add_all_algorithms();
   OPENSSL_config(NULL);
-  
+
+  // Test libffi (n-dic)
+  {
+    ffi_cif cif;
+    ffi_type* args[1];
+    void* values[1];
+    const char* s;
+    ffi_arg rc;
+
+    args[0] = &ffi_type_pointer;
+    values[0] = &s;
+
+    if (ffi_prep_cif(&cif, FFI_DEFAULT_ABI, 1, &ffi_type_sint, args) == FFI_OK) {
+      s = "Hello World!";
+      ffi_call(&cif, (void (*)())puts, &rc, values);
+
+      s = "This is cool!";
+      ffi_call(&cif, (void (*)())puts, &rc, values);
+    }
+  }
+
+  // Test libffi (variadic)
+  {
+    const char* format = "TEST = %f / %i / %s\n";
+    double value1 = 3.14159265359;
+    int value2 = 42;
+    const char* value3 = "bonjour";
+    ffi_type* args[] = {&ffi_type_pointer, &ffi_type_double, &ffi_type_sint32, &ffi_type_pointer};
+    void* values[] = {&format, &value1, &value2, &value3};
+    ffi_cif cif;
+    if (ffi_prep_cif_var(&cif, FFI_DEFAULT_ABI, 1, 4, &ffi_type_sint, args) == FFI_OK) {
+      ffi_arg rc;
+      ffi_call(&cif, (void (*)())printf, &rc, values);
+    }
+  }
+
   // We're done!
-  printf("OK\n");
+#ifdef __LP64__
+  printf("OK 64\n");
+#else
+  printf("OK 32\n");
+#endif
   return 0;
 }

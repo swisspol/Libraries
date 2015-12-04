@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E29962C81BA7404F00426E41 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.cc */; settings = {ASSET_TAGS = (); }; };
-		E29962C91BA7404F00426E41 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.cc */; settings = {ASSET_TAGS = (); }; };
+		E29962C81BA7404F00426E41 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.cc */; };
+		E29962C91BA7404F00426E41 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.cc */; };
 		E29963231BAA70F800426E41 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963221BAA70F800426E41 /* CoreFoundation.framework */; };
 		E29963261BAA711000426E41 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963251BAA711000426E41 /* Security.framework */; };
 		E29963291BAA713A00426E41 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29963221BAA70F800426E41 /* CoreFoundation.framework */; };
@@ -123,7 +123,7 @@
 		E247DF3C1819DF8D002CD010 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					E299629F1BA73F2600426E41 = {
@@ -186,6 +186,7 @@
 					"../libssh2/$(PLATFORM_NAME)/include",
 					"../libcurl/$(PLATFORM_NAME)/include",
 					"../libssl/$(PLATFORM_NAME)/include",
+					"../libffi/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -200,6 +201,7 @@
 					"../libcurl/$(PLATFORM_NAME)/lib/libcurl.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
+					"../libffi/$(PLATFORM_NAME)/lib/libffi.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -220,6 +222,7 @@
 					"../libssh2/$(PLATFORM_NAME)/include",
 					"../libcurl/$(PLATFORM_NAME)/include",
 					"../libssl/$(PLATFORM_NAME)/include",
+					"../libffi/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -234,6 +237,7 @@
 					"../libcurl/$(PLATFORM_NAME)/lib/libcurl.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
+					"../libffi/$(PLATFORM_NAME)/lib/libffi.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
