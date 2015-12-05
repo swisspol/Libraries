@@ -42,6 +42,7 @@ build_library_iphonesimulator
 
 # TODO: arm64 does not work in version 3.2.1
 # TODO: Split headers in armv7 and arm64 versions
+# Use custom generate-darwin-source-and-headers.py and manually merge .a files
 # build_library_iphoneos
 
 popd
