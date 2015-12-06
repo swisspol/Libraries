@@ -14,12 +14,13 @@ This repository contains various open source libraries precompiled as static lib
 * [libssh2](http://www.libssh2.org/)
 * [libssl](https://www.openssl.org/)
 * [libwebp](https://developers.google.com/speed/webp/)
+* [libffi](https://sourceware.org/libffi/)
 
 Build Environment
 =================
 
-* OS X 10.10.5
-* Xcode 7.0
+* OS X 10.10.x
+* Xcode 7.x
 * OS X SDK 11.0 (minimum deployment version 10.8)
 * iOS SDK 9.0 (minimum deployment version 8.0)
 
