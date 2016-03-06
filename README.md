@@ -10,12 +10,12 @@ This repository contains various open source libraries precompiled as static lib
 * [liblcms2](http://www.littlecms.com/)
 * [libpng](http://www.libpng.org/pub/png/libpng.html)
 * [libprotobuf](https://developers.google.com/protocol-buffers/)
-* [libsqlite3](http://www.sqlite.org/) (with FTS enabled and default threading mode set to multi-threaded i.e. SQLITE_THREADSAFE=2)
+* [libsqlite3](http://www.sqlite.org/) (with FTS enabled and default threading mode set to multi-threaded i.e. `SQLITE_THREADSAFE=2`)
 * [libssh2](http://www.libssh2.org/)
 * [libssl](https://www.openssl.org/)
 * [libwebp](https://developers.google.com/speed/webp/)
 * [libffi](https://sourceware.org/libffi/)
-* [libicu](http://site.icu-project.org/)
+* [libicu](http://site.icu-project.org/) (with legacy conversion turned off)
 
 Build Environment
 =================
