@@ -21,6 +21,7 @@
 #include <openssl/conf.h>
 #include <openssl/evp.h>
 #include <ffi.h>
+#include <unicode/regex.h>
 
 using namespace google::protobuf::io;
 
@@ -124,6 +125,15 @@ int main(int argc, const char* argv[]) {
       ffi_arg rc;
       ffi_call(&cif, (void (*)())printf, &rc, values);
     }
+  }
+
+  // Test libicu
+  {
+    UErrorCode status = U_ZERO_ERROR;
+    RegexMatcher matcher("abc+", UREGEX_CASE_INSENSITIVE, status);
+    auto utf8 = UnicodeString::fromUTF8("Find the abc in this string");
+    matcher.reset(utf8);
+    matcher.find();
   }
 
   // We're done!

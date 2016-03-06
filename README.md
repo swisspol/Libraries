@@ -15,6 +15,7 @@ This repository contains various open source libraries precompiled as static lib
 * [libssl](https://www.openssl.org/)
 * [libwebp](https://developers.google.com/speed/webp/)
 * [libffi](https://sourceware.org/libffi/)
+* [libicu](http://site.icu-project.org/)
 
 Build Environment
 =================

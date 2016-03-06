@@ -123,7 +123,7 @@
 		E247DF3C1819DF8D002CD010 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					E299629F1BA73F2600426E41 = {
@@ -187,6 +187,7 @@
 					"../libcurl/$(PLATFORM_NAME)/include",
 					"../libssl/$(PLATFORM_NAME)/include",
 					"../libffi/$(PLATFORM_NAME)/include",
+					"../libicu/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -202,6 +203,9 @@
 					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
 					"../libffi/$(PLATFORM_NAME)/lib/libffi.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicui18n.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicuuc.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicudata.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -223,6 +227,7 @@
 					"../libcurl/$(PLATFORM_NAME)/include",
 					"../libssl/$(PLATFORM_NAME)/include",
 					"../libffi/$(PLATFORM_NAME)/include",
+					"../libicu/$(PLATFORM_NAME)/include",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -238,6 +243,9 @@
 					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
 					"../libffi/$(PLATFORM_NAME)/lib/libffi.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicui18n.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicuuc.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicudata.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
