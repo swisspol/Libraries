@@ -11,6 +11,8 @@ IOS_SDK_VERSION=`xcodebuild -version -sdk | grep -A 1 '^iPhone' | tail -n 1 |  a
 OSX_SDK_VERSION=`xcodebuild -version -sdk | grep -A 1 '^MacOSX' | tail -n 1 |  awk '{ print $2 }'`
 DEVELOPER_DIR=`xcode-select --print-path`
 
+BASE_DIR=`pwd`
+
 function post_build_hook() {
   echo "Post build hook"
 }
@@ -173,13 +175,13 @@ function build_library_platform () {
 }
 
 function build_library_macosx () {
-  build_library_platform "`pwd`/.." "MacOSX" "$OSX_ARCHS"
+  build_library_platform "$BASE_DIR" "MacOSX" "$OSX_ARCHS"
 }
 
 function build_library_iphonesimulator () {
-  build_library_platform "`pwd`/.." "iPhoneSimulator" "$IOS_SIMULATOR_ARCHS"
+  build_library_platform "$BASE_DIR" "iPhoneSimulator" "$IOS_SIMULATOR_ARCHS"
 }
 
 function build_library_iphoneos () {
-  build_library_platform "`pwd`/.." "iPhoneOS" "$IOS_DEVICE_ARCHS"
+  build_library_platform "$BASE_DIR" "iPhoneOS" "$IOS_DEVICE_ARCHS"
 }
