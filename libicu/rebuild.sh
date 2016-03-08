@@ -19,16 +19,25 @@ rm -rf "icu~"
 mv "icu" "icu~"
 tar -xvf "icu4c-$VERSION-src.tgz"
 
-# Pre-build for ARM cross-compilation to satisfy "--with-cross-build=..."
+### Apply patch for building 56.1 (see https://mail-index.netbsd.org/pkgsrc-users/2016/01/20/msg022855.html)
+
+pushd "icu"
+patch -p 0 < "../icu-release-56-1-flagparser-fix.patch"
+popd
+pushd "icu~"
+patch -p 0 < "../icu-release-56-1-flagparser-fix.patch"
+popd
+
+# Pre-build for cross-compilation to satisfy "--with-cross-build=..."
 pushd "icu~/source"
-./configure
+./configure --disable-icuio --disable-layout --disable-tests --disable-samples
 make -j4
 popd
 
 # Build library
 pushd "icu/source"
 
-EXTRA_CFLAGS="-DUCONFIG_NO_LEGACY_CONVERSION=1"
+EXTRA_CFLAGS="-DU_CHARSET_IS_UTF8=1 -DUCONFIG_NO_LEGACY_CONVERSION=1 -DUCONFIG_NO_COLLATION=1 -DUCONFIG_NO_BREAK_ITERATION=1 -DUCONFIG_NO_FORMATTING=1"
 
 EXTRA_CONFIGURE_OPTIONS="--disable-dyload --disable-icuio --disable-layout --disable-tests --disable-samples"
 build_library_macosx

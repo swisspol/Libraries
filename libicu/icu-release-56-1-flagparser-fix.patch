@@ -1,0 +1,15 @@
+Index: source/tools/toolutil/flagparser.c
+===================================================================
+--- source/tools/toolutil/flagparser.c	(revision 38046)
++++ source/tools/toolutil/flagparser.c	(working copy)
+@@ -96,8 +96,8 @@
+     uprv_free(buffer);
+ 
+     T_FileStream_close(f);
+-    
+-    if (U_FAILURE(*status)) {
++
++    if (U_FAILURE(*status) && *status != U_BUFFER_OVERFLOW_ERROR) {
+         return -1;
+     }
+ 

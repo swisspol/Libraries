@@ -203,9 +203,9 @@
 					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
 					"../libffi/$(PLATFORM_NAME)/lib/libffi.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicudata.a",
 					"../libicu/$(PLATFORM_NAME)/lib/libicui18n.a",
 					"../libicu/$(PLATFORM_NAME)/lib/libicuuc.a",
-					"../libicu/$(PLATFORM_NAME)/lib/libicudata.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -243,9 +243,9 @@
 					"../libssl/$(PLATFORM_NAME)/lib/libcrypto.a",
 					"../libssl/$(PLATFORM_NAME)/lib/libssl.a",
 					"../libffi/$(PLATFORM_NAME)/lib/libffi.a",
+					"../libicu/$(PLATFORM_NAME)/lib/libicudata.a",
 					"../libicu/$(PLATFORM_NAME)/lib/libicui18n.a",
 					"../libicu/$(PLATFORM_NAME)/lib/libicuuc.a",
-					"../libicu/$(PLATFORM_NAME)/lib/libicudata.a",
 				);
 				WARNING_CFLAGS = "-Wall";
 			};
