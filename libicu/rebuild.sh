@@ -31,7 +31,7 @@ popd
 # Pre-build for cross-compilation to satisfy "--with-cross-build=..."
 pushd "icu~/source"
 ./configure --disable-icuio --disable-layout --disable-tests --disable-samples
-make -j4
+make -j
 popd
 
 # Build library
