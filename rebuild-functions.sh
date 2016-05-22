@@ -35,7 +35,7 @@ function configure() {
     HOST="arm-apple-darwin"
   fi
   
-  ./configure --prefix="$PREFIX" --host="$HOST" --enable-static --disable-shared $EXTRA_CONFIGURE_OPTIONS > "$LOG"
+  ./configure --prefix="$PREFIX" --host="$HOST" --enable-static --disable-shared $EXTRA_CONFIGURE_OPTIONS >> "$LOG"
 }
 
 function build_library_arch () {
@@ -101,9 +101,9 @@ function build_library_arch () {
   touch "$LOG"
   rm -rf "$PREFIX"
   configure "$PLATFORM" "$ARCH" "$PREFIX" "$LOG"
-  make -j4 > "$LOG"
-  make install > "$LOG"
-  make clean > "$LOG"
+  make -j >> "$LOG"
+  make install >> "$LOG"
+  make clean >> "$LOG"
   
   # Archive configure log if available
   if [ -e "config.log" ]
