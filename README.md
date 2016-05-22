@@ -16,11 +16,11 @@ This repository contains various open source libraries precompiled as static lib
 * [libwebp](https://developers.google.com/speed/webp/)
 * [libffi](https://sourceware.org/libffi/)
 * [libicu](http://site.icu-project.org/) (with legacy conversion turned off)
+* [libmbedtls](https://tls.mbed.org/)
 
 Build Environment
 =================
 
-* OS X 10.10.x
 * Xcode 7.x
 * OS X SDK 11.0 (minimum deployment version 10.8)
 * iOS SDK 9.0 (minimum deployment version 8.0)

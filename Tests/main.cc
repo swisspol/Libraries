@@ -22,6 +22,7 @@
 #include <openssl/evp.h>
 #include <ffi.h>
 #include <unicode/regex.h>
+#include <mbedtls/ssl.h>
 
 using namespace google::protobuf::io;
 
@@ -134,6 +135,12 @@ int main(int argc, const char* argv[]) {
     auto utf8 = UnicodeString::fromUTF8("Find the abc in this string");
     matcher.reset(utf8);
     matcher.find();
+  }
+
+  // Test libmbedtls
+  {
+    mbedtls_ssl_context ssl;
+    mbedtls_ssl_init(&ssl);
   }
 
   // We're done!
