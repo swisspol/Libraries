@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -123,7 +123,7 @@
 		E247DF3C1819DF8D002CD010 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					E299629F1BA73F2600426E41 = {
@@ -132,7 +132,7 @@
 				};
 			};
 			buildConfigurationList = E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Tests" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -284,6 +284,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 88W3E55T4B;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Tests;
@@ -297,6 +298,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 88W3E55T4B;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Tests;
