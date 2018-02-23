@@ -8,7 +8,6 @@ This repository contains various open source libraries precompiled as static lib
 * [libexiv2](http://www.exiv2.org/)
 * [libexpat](http://expat.sourceforge.net/)
 * [liblcms2](http://www.littlecms.com/)
-* [libpng](http://www.libpng.org/pub/png/libpng.html)
 * [libprotobuf](https://developers.google.com/protocol-buffers/)
 * [libsqlite3](http://www.sqlite.org/) (with FTS enabled and default threading mode set to multi-threaded i.e. `SQLITE_THREADSAFE=2`)
 * [libssh2](http://www.libssh2.org/)

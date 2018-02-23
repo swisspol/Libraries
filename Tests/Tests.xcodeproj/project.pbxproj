@@ -178,7 +178,6 @@
 				HEADER_SEARCH_PATHS = (
 					"../libsqlite3/$(PLATFORM_NAME)/include",
 					"../libwebp/$(PLATFORM_NAME)/include",
-					"../libpng/$(PLATFORM_NAME)/include",
 					"../liblcms2/$(PLATFORM_NAME)/include",
 					"../libexif/$(PLATFORM_NAME)/include",
 					"../libexiv2/$(PLATFORM_NAME)/include",
@@ -194,7 +193,6 @@
 					"-lz",
 					"../libsqlite3/$(PLATFORM_NAME)/lib/libsqlite3.a",
 					"../libwebp/$(PLATFORM_NAME)/lib/libwebp.a",
-					"../libpng/$(PLATFORM_NAME)/lib/libpng.a",
 					"../liblcms2/$(PLATFORM_NAME)/lib/liblcms2.a",
 					"../libexif/$(PLATFORM_NAME)/lib/libexif.a",
 					"../libexiv2/$(PLATFORM_NAME)/lib/libexiv2.a",
@@ -222,7 +220,6 @@
 				HEADER_SEARCH_PATHS = (
 					"../libsqlite3/$(PLATFORM_NAME)/include",
 					"../libwebp/$(PLATFORM_NAME)/include",
-					"../libpng/$(PLATFORM_NAME)/include",
 					"../liblcms2/$(PLATFORM_NAME)/include",
 					"../libexif/$(PLATFORM_NAME)/include",
 					"../libexiv2/$(PLATFORM_NAME)/include",
@@ -238,7 +235,6 @@
 					"-lz",
 					"../libsqlite3/$(PLATFORM_NAME)/lib/libsqlite3.a",
 					"../libwebp/$(PLATFORM_NAME)/lib/libwebp.a",
-					"../libpng/$(PLATFORM_NAME)/lib/libpng.a",
 					"../liblcms2/$(PLATFORM_NAME)/lib/liblcms2.a",
 					"../libexif/$(PLATFORM_NAME)/lib/libexif.a",
 					"../libexiv2/$(PLATFORM_NAME)/lib/libexiv2.a",

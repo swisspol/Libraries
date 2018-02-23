@@ -3,7 +3,6 @@
 
 #include <sqlite3.h>
 #include <webp/encode.h>
-#include <png.h>
 #include <lcms2.h>
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wshorten-64-to-32"
@@ -46,10 +45,6 @@ int main(int argc, const char* argv[]) {
   // Test libwebp
   WebPConfig config;
   WebPConfigInit(&config);
-  
-  // Test libpng
-  png_structp png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-  png_destroy_write_struct(&png_ptr, NULL);
   
   // Test liblcms2
   cmsHPROFILE input_profile = cmsOpenProfileFromMem(NULL, 0);
